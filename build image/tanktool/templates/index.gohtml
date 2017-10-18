@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <metat chatset="UTF-8">
+    <title>Tank Build!</title>
+</head>
+    <body>
+        <p>ok yeah</p>
+        <form action="/printTanks" method="post">
+            <select name="tank">
+            <datalist id="tanks">
+                {{range .TierTwoTanks}}
+                <option value="{{.Name}}">{{.Name}}</option>
+                {{end}}
+            </select>
+        </form>    
+    </body>
+</html>
