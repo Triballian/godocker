@@ -1,1 +1,0 @@
-Everything in the tankorganizer folder and any subdirectories will be included in the image
