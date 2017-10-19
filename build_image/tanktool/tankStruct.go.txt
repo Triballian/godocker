@@ -1,0 +1,275 @@
+package main
+
+type tierFourTank struct {
+	name string
+}
+type tierThreeTank struct {
+	name          string
+	tierFourTanks []tierFourTank
+}
+
+type tierTwoTank struct {
+	name           string
+	tierThreeTanks []tierThreeTank
+}
+
+type tierOneTank struct {
+	name         string
+	tierTwoTanks []tierTwoTank
+}
+
+var landMine = tierFourTank{
+	name: "Land Mine",
+}
+
+var autoSmasher = tierFourTank{
+	name: "Auto Smasher",
+}
+
+var spike = tierFourTank{
+	name: "spike",
+}
+
+var triplet = tierFourTank{
+	name: "Triplet",
+}
+
+var pentaShot = tierFourTank{
+	name: "Penta Shot",
+}
+
+var spreadShot = tierFourTank{
+	name: "Spread Shot",
+}
+
+var octoTankQuad = tierFourTank{
+	name: "Octo Tank Quad",
+}
+
+var auto5 = tierFourTank{
+	name: "Auto 5",
+}
+
+var tripleTwinTwin = tierFourTank{
+	name: "Triple Twin",
+}
+
+var battleshipTwin = tierFourTank{
+	name: "Battleship Twin",
+}
+
+var ranger = tierFourTank{
+	name: "Ranger",
+}
+
+var stalker = tierFourTank{
+	name: "Stalker",
+}
+
+var overlord = tierFourTank{
+	name: "Overlord",
+}
+
+var necromancer = tierFourTank{
+	name: "Necromancer",
+}
+
+var manager = tierFourTank{
+	name: "Manager",
+}
+
+var overTrapperSeer = tierFourTank{
+	name: "Overtrapper Seer",
+}
+
+var battleshipSniper = tierFourTank{
+	name: "Battleship Sniper",
+}
+
+var factory = tierFourTank{
+	name: "Factory",
+}
+
+var predator = tierFourTank{
+	name: "Predator",
+}
+
+var streamlinerHunter = tierFourTank{
+	name: "Streamliner Hunter",
+}
+
+var hibrid = tierFourTank{
+	name: "Hibrid",
+}
+
+var annihilator = tierFourTank{
+	name: "Annihilator",
+}
+
+var skimmer = tierFourTank{
+	name: "Skimmer",
+}
+
+var autoGunnerGunner = tierFourTank{
+	name: "Auto Gunner Gunner",
+}
+
+var gunnerTrapperGunner = tierFourTank{
+	name: "Gunner Trapper Gunner",
+}
+
+var streamlinerGunner = tierFourTank{
+	name: "Streamliner Gunner",
+}
+
+var triTrapper = tierFourTank{
+	name: "Tri-Trapper",
+}
+
+var gunnerTrapperSniper = tierFourTank{
+	name: "Gunner Trapper Sniper",
+}
+
+var overTrapperSniper = tierFourTank{
+	name: "Overtrapper Sniper",
+}
+
+var megaTrapper = tierFourTank{
+	name: "Mega Trapper",
+}
+
+var autoTrapper = tierFourTank{
+	name: "Auto Trapper",
+}
+
+var booster = tierFourTank{
+	name: "Boster",
+}
+
+var fighter = tierFourTank{
+	name: "Fighter",
+}
+
+var octoTankFlank = tierFourTank{
+	name: "Octo Tank Flank",
+}
+
+var auto5Quad = tierFourTank{
+	name: "Auto 5 Quad",
+}
+
+var tripleTwinFlank = tierFourTank{
+	name: "Triple Twin Flank",
+}
+
+var battleshipFlank = tierFourTank{
+	name: "Battleship Flank",
+}
+
+var auto5Auto = tierFourTank{
+	name: "Auto 5 Auto",
+}
+
+var autoGunnerAuto = tierFourTank{
+	name: "Auto Gunner Auto",
+}
+
+var smasher = tierThreeTank{
+	name:          "Smasher",
+	tierFourTanks: []tierFourTank{landMine, autoSmasher, spike},
+}
+
+var tripleShot = tierThreeTank{
+	name:          "Triple Shot",
+	tierFourTanks: []tierFourTank{triplet, pentaShot, spreadShot},
+}
+
+var quadTankTwin = tierThreeTank{
+	name:          "Quad Tank Twin",
+	tierFourTanks: []tierFourTank{octoTankQuad, auto5},
+}
+
+var twinFlankTwin = tierThreeTank{
+	name:          "Twin Flank Twin",
+	tierFourTanks: []tierFourTank{tripleTwinTwin, battleshipTwin},
+}
+
+var assassin = tierThreeTank{
+	name:          "Assassin",
+	tierFourTanks: []tierFourTank{ranger, stalker},
+}
+
+var overseer = tierThreeTank{
+	name:          "Overseer",
+	tierFourTanks: []tierFourTank{overlord, necromancer, manager, overTrapperSeer, battleshipSniper, factory},
+}
+
+var hunter = tierThreeTank{
+	name:          "Hunter",
+	tierFourTanks: []tierFourTank{triTrapper, streamlinerHunter},
+}
+
+var trapper = tierThreeTank{
+	name:          "Trapper",
+	tierFourTanks: []tierFourTank{triTrapper, gunnerTrapperSniper, overTrapperSeer, megaTrapper, autoTrapper},
+}
+
+var destroyer = tierThreeTank{
+	name:          "Destroyer",
+	tierFourTanks: []tierFourTank{hibrid, annihilator, skimmer},
+}
+
+var gunner = tierThreeTank{
+	name:          "Gunner",
+	tierFourTanks: []tierFourTank{autoGunnerGunner, gunnerTrapperGunner, streamlinerGunner},
+}
+
+var sprayer = tierThreeTank{
+	name:          "Spayer",
+	tierFourTanks: []tierFourTank{autoGunnerGunner, gunnerTrapperGunner, streamlinerGunner},
+}
+
+var triAngle = tierThreeTank{
+	name:          "Tri-Angle",
+	tierFourTanks: []tierFourTank{booster, fighter},
+}
+
+var quadTankGuard = tierThreeTank{
+	name:          "Quad Tank Guard",
+	tierFourTanks: []tierFourTank{octoTankFlank, auto5Quad},
+}
+
+var twinFlankGuard = tierThreeTank{
+	name:          "Twin Flank Guard",
+	tierFourTanks: []tierFourTank{tripleTwinFlank, battleshipFlank},
+}
+
+var auto3 = tierThreeTank{
+	name:          "Auto 3",
+	tierFourTanks: []tierFourTank{auto5Auto, autoGunnerAuto},
+}
+
+var twin = tierTwoTank{
+	name:           "Twin",
+	tierThreeTanks: []tierThreeTank{tripleShot, quadTankGuard, twinFlankTwin},
+}
+
+var sniper = tierTwoTank{
+	name:           "Sniper",
+	tierThreeTanks: []tierThreeTank{assassin, overseer, hunter, trapper},
+}
+
+var machineGun = tierTwoTank{
+	name:           "Machine Gun",
+	tierThreeTanks: []tierThreeTank{destroyer, gunner, sprayer},
+}
+
+var flankGuard = tierTwoTank{
+	name:           "Flank Gaurd",
+	tierThreeTanks: []tierThreeTank{triAngle, quadTankGuard, twinFlankGuard, auto3},
+}
+
+var baseTank = tierOneTank{
+	name:         "Base Tank",
+	tierTwoTanks: []tierTwoTank{twin, sniper, machineGun, flankGuard},
+}
