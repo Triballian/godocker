@@ -9,9 +9,9 @@
         <form action="/printTanks" method="post">
             <select name="tank">
             <datalist id="tanks">
-                {{range .TierTwoTanks}}
-                <option value="{{.Name}}">{{.Name}}</option>
-                {{end}}
+                {{$tank := .}}
+                <option value="{{$tank.Name}}">{{$tank.Name}}</option>
+                
             </select>
         </form>    
     </body>

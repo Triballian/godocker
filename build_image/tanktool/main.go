@@ -35,43 +35,42 @@ type netReplaceColor struct {
 // 	tierThreeTank
 // }
 
-// TierFourTank Tier Frou Tank Struct
-type TierFourTank struct {
+// Tank allows all tanks to inherit Name string property
+type Tank struct {
 	Name string
+}
+
+// TierFourTank Tier Four Tank Struct
+type TierFourTank struct {
+	Tank
 }
 
 // TierThreeTank Tier Three Tank Struct
 type TierThreeTank struct {
-	Name          string
+	Tank
 	tierFourTanks []TierFourTank
 }
 
 // TierTwoTank Tier Two Tank Struct
 type TierTwoTank struct {
-	Name           string
+	Tank
 	tierThreeTanks []TierThreeTank
 }
 
 // TierOneTank Tier One Tank Struct
 type TierOneTank struct {
-	Name         string
+	Tank
 	TierTwoTanks []TierTwoTank
 }
 
 // LandMine Tier Four Tank
-var LandMine = TierFourTank{
-	Name: "Land Mine",
-}
+var LandMine TierFourTank
 
 // AutoSmasher Tier Four Tank
-var AutoSmasher = TierFourTank{
-	Name: "Auto Smasher",
-}
+var AutoSmasher TierFourTank
 
 // Spike Tier Four Tank
-var Spike = TierFourTank{
-	Name: "Spike",
-}
+var Spike TierFourTank
 
 // Triplet Tier Four Tank
 var Triplet = TierFourTank{
@@ -373,6 +372,13 @@ var BaseTank = TierOneTank{
 	TierTwoTanks: []TierTwoTank{Twin, Sniper, MachineGun, FlankGuard},
 }
 
+func tankNames() {
+	LandMine.Name = "Land Mine"
+	AutoSmasher.Name = "Auto Smasher"
+	Spike.Name = "Spike"
+
+}
+
 // type searchTank int
 
 // func (s searchTank) ServeHTTP(w http.ResponseWriter, req *http.Request) {
@@ -406,6 +412,7 @@ func init() {
 }
 
 func main() {
+	tankNames()
 	// var t searchTank
 	router := httprouter.New()
 	router.GET("/", Index)
