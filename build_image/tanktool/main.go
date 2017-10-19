@@ -45,7 +45,7 @@ type TierFourTank struct {
 	Tank
 }
 
-// TierFourSpecial Tier Four Tank Special
+// TierFourSpecial Tier Four Tank Special, for Spike, Auto Smasher and LandMine
 type TierFourSpecial struct {
 	Tank
 }
@@ -56,20 +56,20 @@ type TierThreeTank struct {
 	tierFourTanks []TierFourTank
 }
 
-// TierThreeSpecial Tier 3 special tank for smasher
+// TierThreeSpecial Tier 3 special tank for smasher, only available to the Base Tank if the tier 2 tank is not slected.
 type TierThreeSpecial struct {
 	Tank
 	tierFourTanks []TierFourTank
 }
 
-// TierTwoTank Tier Two Tank Struct
+// TierTwoTank Tier Two Tank Strucute if the Machine Gun does not select a tier 3 tank then the Tier 4 special tank Spayer becomes Available
 type TierTwoTank struct {
 	Tank
 	tierThreeTanks  []TierThreeTank
 	tierFourSpecial TierFourSpecial
 }
 
-// TierOneTank Tier One Tank Struct
+// TierOneTank Tier One Tank Struct if tier two tank is not selected then the tier 3 special tank Smasher becomes available.
 type TierOneTank struct {
 	Tank
 	tierTwoTanks     []TierTwoTank
@@ -287,7 +287,7 @@ var FlankGuard = TierTwoTank{
 	tierThreeTanks: []TierThreeTank{TriAngle, QuadTankGuard, TwinFlankGuard, Auto3},
 }
 
-// BaseTank Tier one tank or Base Tank
+// BaseTank Tier one tank or Base Tank, if the base tank doe not choose a tier 2 tank then the Smasher becomes available.
 var BaseTank = TierOneTank{
 	tierTwoTanks:     []TierTwoTank{Twin, Sniper, MachineGun, FlankGuard},
 	tierThreeSpecial: Smasher,
