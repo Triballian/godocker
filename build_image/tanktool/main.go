@@ -35,156 +35,195 @@ type netReplaceColor struct {
 // 	tierThreeTank
 // }
 
+// TierFourTank Tier Frou Tank Struct
 type TierFourTank struct {
 	Name string
 }
+
+// TierThreeTank Tier Three Tank Struct
 type TierThreeTank struct {
 	Name          string
 	tierFourTanks []TierFourTank
 }
 
+// TierTwoTank Tier Two Tank Struct
 type TierTwoTank struct {
 	Name           string
 	tierThreeTanks []TierThreeTank
 }
 
+// TierOneTank Tier One Tank Struct
 type TierOneTank struct {
 	Name         string
 	TierTwoTanks []TierTwoTank
 }
 
+// LandMine Tier Four Tank
 var LandMine = TierFourTank{
 	Name: "Land Mine",
 }
 
+// AutoSmasher Tier Four Tank
 var AutoSmasher = TierFourTank{
 	Name: "Auto Smasher",
 }
 
+// Spike Tier Four Tank
 var Spike = TierFourTank{
 	Name: "Spike",
 }
 
+// Triplet Tier Four Tank
 var Triplet = TierFourTank{
 	Name: "Triplet",
 }
 
+// PentaShot Tier Four Tank
 var PentaShot = TierFourTank{
 	Name: "Penta Shot",
 }
 
+// SpreadShot Tier Four Tank
 var SpreadShot = TierFourTank{
 	Name: "Spread Shot",
 }
 
+// OctoTankQuad Tier Four Tank Quad Derivitve
 var OctoTankQuad = TierFourTank{
 	Name: "Octo Tank Quad",
 }
 
+// Auto5 Tier Four Tank
 var Auto5 = TierFourTank{
 	Name: "Auto 5",
 }
 
+// TripleTwinTwin Tier Four Tank Twin Derivitive
 var TripleTwinTwin = TierFourTank{
 	Name: "Triple Twin",
 }
 
+// BattleshipTwin Tier Four Tank Twin Derivitive
 var BattleshipTwin = TierFourTank{
 	Name: "Battleship Twin",
 }
 
+// Ranger Tier Four Tank
 var Ranger = TierFourTank{
 	Name: "Ranger",
 }
 
+// Stalker Tier Four Tank
 var Stalker = TierFourTank{
 	Name: "Stalker",
 }
 
+// Overlord Tier Four Tank
 var Overlord = TierFourTank{
 	Name: "Overlord",
 }
 
+// Necromancer Tier Four Tank
 var Necromancer = TierFourTank{
 	Name: "Necromancer",
 }
 
+// Manager Tier Four Tank
 var Manager = TierFourTank{
 	Name: "Manager",
 }
 
+// OverTrapperSeer Tier Four Tank Overseer Derivitive
 var OverTrapperSeer = TierFourTank{
 	Name: "Overtrapper Seer",
 }
 
+// BattleshipSniper Tier Four Tank Derives from Sniper
 var BattleshipSniper = TierFourTank{
 	Name: "Battleship Sniper",
 }
 
+// Factory Tier Four Tank
 var Factory = TierFourTank{
 	Name: "Factory",
 }
 
+// Predator Tier Four Tank
 var Predator = TierFourTank{
 	Name: "Predator",
 }
 
+// StreamlinerHunter Tier Four Tank Derives from Hunter
 var StreamlinerHunter = TierFourTank{
 	Name: "Streamliner Hunter",
 }
 
+// Hibrid Tier Four Tank
 var Hibrid = TierFourTank{
 	Name: "Hibrid",
 }
 
+// Annihilator Tier Four Tank
 var Annihilator = TierFourTank{
 	Name: "Annihilator",
 }
 
+// Skimmer Tier Four Tank
 var Skimmer = TierFourTank{
 	Name: "Skimmer",
 }
 
+// AutoGunnerGunner Tier Four Tank Derives from Gunner Tank
 var AutoGunnerGunner = TierFourTank{
 	Name: "Auto Gunner Gunner",
 }
 
+// GunnerTrapperGunner Tier Four Tank Derives from Gunner Tank
 var GunnerTrapperGunner = TierFourTank{
 	Name: "Gunner Trapper Gunner",
 }
 
+// StreamlinerGunner Tier Four Tank Derives from Gunner Tank
 var StreamlinerGunner = TierFourTank{
 	Name: "Streamliner Gunner",
 }
 
+// TriTrapper Tier Four Tank
 var TriTrapper = TierFourTank{
 	Name: "Tri-Trapper",
 }
 
+// GunnerTrapperSniper Tier Four Tank Derives from Sniper Tank
 var GunnerTrapperSniper = TierFourTank{
 	Name: "Gunner Trapper Sniper",
 }
 
+// OverTrapperSniper Tier Four Tank Derives from Sniper Tank
 var OverTrapperSniper = TierFourTank{
 	Name: "Overtrapper Sniper",
 }
 
+// MegaTrapper Tier Four Tank
 var MegaTrapper = TierFourTank{
 	Name: "Mega Trapper",
 }
 
+// AutoTrapper Tier Four Tank
 var AutoTrapper = TierFourTank{
 	Name: "Auto Trapper",
 }
 
+// Booster Tier Four Tank
 var Booster = TierFourTank{
 	Name: "Boster",
 }
 
+// Fighter Tier Four Tank
 var Fighter = TierFourTank{
 	Name: "Fighter",
 }
 
+// OctoTankFlank Tier Four Tank Derives form Flank Tank
 var OctoTankFlank = TierFourTank{
 	Name: "Octo Tank Flank",
 }
