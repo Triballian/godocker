@@ -45,8 +45,19 @@ type TierFourTank struct {
 	Tank
 }
 
+// TierFourSpecial Tier Four Tank Special
+type TierFourSpecial struct {
+	Tank
+}
+
 // TierThreeTank Tier Three Tank Struct
 type TierThreeTank struct {
+	Tank
+	tierFourTanks []TierFourTank
+}
+
+// TierThreeSpecial Tier 3 special tank for smasher
+type TierThreeSpecial struct {
 	Tank
 	tierFourTanks []TierFourTank
 }
@@ -54,13 +65,15 @@ type TierThreeTank struct {
 // TierTwoTank Tier Two Tank Struct
 type TierTwoTank struct {
 	Tank
-	tierThreeTanks []TierThreeTank
+	tierThreeTanks  []TierThreeTank
+	tierFourSpecial TierFourSpecial
 }
 
 // TierOneTank Tier One Tank Struct
 type TierOneTank struct {
 	Tank
-	TierTwoTanks []TierTwoTank
+	tierTwoTanks     []TierTwoTank
+	tierThreeSpecial TierThreeSpecial
 }
 
 // LandMine Tier Four Tank
@@ -73,310 +86,272 @@ var AutoSmasher TierFourTank
 var Spike TierFourTank
 
 // Triplet Tier Four Tank
-var Triplet = TierFourTank{
-	Name: "Triplet",
-}
+var Triplet TierFourTank
 
 // PentaShot Tier Four Tank
-var PentaShot = TierFourTank{
-	Name: "Penta Shot",
-}
+var PentaShot TierFourTank
 
 // SpreadShot Tier Four Tank
-var SpreadShot = TierFourTank{
-	Name: "Spread Shot",
-}
+var SpreadShot TierFourTank
 
 // OctoTankQuad Tier Four Tank Quad Derivitve
-var OctoTankQuad = TierFourTank{
-	Name: "Octo Tank Quad",
-}
+var OctoTankQuad TierFourTank
 
 // Auto5 Tier Four Tank
-var Auto5 = TierFourTank{
-	Name: "Auto 5",
-}
+var Auto5 TierFourTank
 
 // TripleTwinTwin Tier Four Tank Twin Derivitive
-var TripleTwinTwin = TierFourTank{
-	Name: "Triple Twin",
-}
+var TripleTwinTwin TierFourTank
 
 // BattleshipTwin Tier Four Tank Twin Derivitive
-var BattleshipTwin = TierFourTank{
-	Name: "Battleship Twin",
-}
+var BattleshipTwin TierFourTank
 
 // Ranger Tier Four Tank
-var Ranger = TierFourTank{
-	Name: "Ranger",
-}
+var Ranger TierFourTank
 
 // Stalker Tier Four Tank
-var Stalker = TierFourTank{
-	Name: "Stalker",
-}
+var Stalker TierFourTank
 
 // Overlord Tier Four Tank
-var Overlord = TierFourTank{
-	Name: "Overlord",
-}
+var Overlord TierFourTank
 
 // Necromancer Tier Four Tank
-var Necromancer = TierFourTank{
-	Name: "Necromancer",
-}
+var Necromancer TierFourTank
 
 // Manager Tier Four Tank
-var Manager = TierFourTank{
-	Name: "Manager",
-}
+var Manager TierFourTank
 
 // OverTrapperSeer Tier Four Tank Overseer Derivitive
-var OverTrapperSeer = TierFourTank{
-	Name: "Overtrapper Seer",
-}
+var OverTrapperSeer TierFourTank
 
 // BattleshipSniper Tier Four Tank Derives from Sniper
-var BattleshipSniper = TierFourTank{
-	Name: "Battleship Sniper",
-}
+var BattleshipSniper TierFourTank
 
 // Factory Tier Four Tank
-var Factory = TierFourTank{
-	Name: "Factory",
-}
+var Factory TierFourTank
 
 // Predator Tier Four Tank
-var Predator = TierFourTank{
-	Name: "Predator",
-}
+var Predator TierFourTank
 
 // StreamlinerHunter Tier Four Tank Derives from Hunter
-var StreamlinerHunter = TierFourTank{
-	Name: "Streamliner Hunter",
-}
+var StreamlinerHunter TierFourTank
 
 // Hibrid Tier Four Tank
-var Hibrid = TierFourTank{
-	Name: "Hibrid",
-}
+var Hibrid TierFourTank
 
 // Annihilator Tier Four Tank
-var Annihilator = TierFourTank{
-	Name: "Annihilator",
-}
+var Annihilator TierFourTank
+
+// Sprayer Tier Four Tank only if the Machine Gun tank didn't upgrade to tier three.
+var Sprayer TierFourSpecial
 
 // Skimmer Tier Four Tank
-var Skimmer = TierFourTank{
-	Name: "Skimmer",
-}
+var Skimmer TierFourTank
 
 // AutoGunnerGunner Tier Four Tank Derives from Gunner Tank
-var AutoGunnerGunner = TierFourTank{
-	Name: "Auto Gunner Gunner",
-}
+var AutoGunnerGunner TierFourTank
 
 // GunnerTrapperGunner Tier Four Tank Derives from Gunner Tank
-var GunnerTrapperGunner = TierFourTank{
-	Name: "Gunner Trapper Gunner",
-}
+var GunnerTrapperGunner TierFourTank
 
 // StreamlinerGunner Tier Four Tank Derives from Gunner Tank
-var StreamlinerGunner = TierFourTank{
-	Name: "Streamliner Gunner",
-}
+var StreamlinerGunner TierFourTank
 
 // TriTrapper Tier Four Tank
-var TriTrapper = TierFourTank{
-	Name: "Tri-Trapper",
-}
+var TriTrapper TierFourTank
 
 // GunnerTrapperSniper Tier Four Tank Derives from Sniper Tank
-var GunnerTrapperSniper = TierFourTank{
-	Name: "Gunner Trapper Sniper",
-}
+var GunnerTrapperSniper TierFourTank
 
 // OverTrapperSniper Tier Four Tank Derives from Sniper Tank
-var OverTrapperSniper = TierFourTank{
-	Name: "Overtrapper Sniper",
-}
+var OverTrapperSniper TierFourTank
 
 // MegaTrapper Tier Four Tank
-var MegaTrapper = TierFourTank{
-	Name: "Mega Trapper",
-}
+var MegaTrapper TierFourTank
 
 // AutoTrapper Tier Four Tank
-var AutoTrapper = TierFourTank{
-	Name: "Auto Trapper",
-}
+var AutoTrapper TierFourTank
 
 // Booster Tier Four Tank
-var Booster = TierFourTank{
-	Name: "Boster",
-}
+var Booster TierFourTank
 
 // Fighter Tier Four Tank
-var Fighter = TierFourTank{
-	Name: "Fighter",
-}
+var Fighter TierFourTank
 
 // OctoTankFlank Tier Four Tank Derives form Flank Tank
-var OctoTankFlank = TierFourTank{
-	Name: "Octo Tank Flank",
-}
+var OctoTankFlank TierFourTank
 
-// Auto5Quad Tier Four Tank Derrives from Quad
-var Auto5Quad = TierFourTank{
-	Name: "Auto 5 Quad",
-}
-
-// TripleTwinFlank Tier Four Tank
-var TripleTwinFlank = TierFourTank{
-	Name: "Triple Twin Flank",
-}
-
-// BattleshipFlank TierFourTank
-var BattleshipFlank = TierFourTank{
-	Name: "Battleship Flank",
-}
-
-// Auto5Auto Tier Four Tank
-var Auto5Auto = TierFourTank{
-	Name: "Auto 5 Auto",
-}
-
-// AutoGunnerAuto Tier Four Tank
-var AutoGunnerAuto = TierFourTank{
-	Name: "Auto Gunner Auto",
-}
-
-// Smasher Tier Three Tank
-var Smasher = TierThreeTank{
-	Name:          "Smasher",
+// Smasher Tier Three Tank only if the Basic Gun tank didn't upgrade to tier tow.
+var Smasher = TierThreeSpecial{
 	tierFourTanks: []TierFourTank{LandMine, AutoSmasher, Spike},
 }
 
+// Auto5Quad Tier Four Tank Derrives from Quad
+var Auto5Quad TierFourTank
+
+// TripleTwinFlank Tier Four Tank
+var TripleTwinFlank TierFourTank
+
+// BattleshipFlank TierFourTank
+var BattleshipFlank TierFourTank
+
+// Auto5Auto Tier Four Tank
+var Auto5Auto TierFourTank
+
+// AutoGunnerAuto Tier Four Tank
+var AutoGunnerAuto TierFourTank
+
 // TripleShot Tier Three Tank
 var TripleShot = TierThreeTank{
-	Name:          "Triple Shot",
 	tierFourTanks: []TierFourTank{Triplet, PentaShot, SpreadShot},
 }
 
 // QuadTankTwin Tier Three Tank
 var QuadTankTwin = TierThreeTank{
-	Name:          "Quad Tank Twin",
 	tierFourTanks: []TierFourTank{OctoTankQuad, Auto5},
 }
 
 // TwinFlankTwin Tier Three Tank
 var TwinFlankTwin = TierThreeTank{
-	Name:          "Twin Flank Twin",
 	tierFourTanks: []TierFourTank{TripleTwinTwin, BattleshipTwin},
 }
 
 // Assassin Tier Three Tank
 var Assassin = TierThreeTank{
-	Name:          "Assassin",
 	tierFourTanks: []TierFourTank{Ranger, Stalker},
 }
 
 // Overseer Tier Three Tank
 var Overseer = TierThreeTank{
-	Name:          "Overseer",
 	tierFourTanks: []TierFourTank{Overlord, Necromancer, Manager, OverTrapperSeer, BattleshipSniper, Factory},
 }
 
 // Hunter Tier Three Tank
 var Hunter = TierThreeTank{
-	Name:          "Hunter",
 	tierFourTanks: []TierFourTank{TriTrapper, StreamlinerHunter},
 }
 
 // Trapper Tier Three Tank
 var Trapper = TierThreeTank{
-	Name:          "Trapper",
 	tierFourTanks: []TierFourTank{TriTrapper, GunnerTrapperSniper, OverTrapperSeer, MegaTrapper, AutoTrapper},
 }
 
 // Destroyer Tier Three Tank
 var Destroyer = TierThreeTank{
-	Name:          "Destroyer",
 	tierFourTanks: []TierFourTank{Hibrid, Annihilator, Skimmer},
 }
 
 // Gunner Tier Three Tank
 var Gunner = TierThreeTank{
-	Name:          "Gunner",
-	tierFourTanks: []TierFourTank{AutoGunnerGunner, GunnerTrapperGunner, StreamlinerGunner},
-}
-
-// Sprayer Tier Three Tank
-var Sprayer = TierThreeTank{
-	Name:          "Spayer",
 	tierFourTanks: []TierFourTank{AutoGunnerGunner, GunnerTrapperGunner, StreamlinerGunner},
 }
 
 // TriAngle Tier Three Tank
 var TriAngle = TierThreeTank{
-	Name:          "Tri-Angle",
 	tierFourTanks: []TierFourTank{Booster, Fighter},
 }
 
 // QuadTankGuard Tier Three Tank
 var QuadTankGuard = TierThreeTank{
-	Name:          "Quad Tank Guard",
 	tierFourTanks: []TierFourTank{OctoTankFlank, Auto5Quad},
 }
 
 // TwinFlankGuard Tier Three Tank
 var TwinFlankGuard = TierThreeTank{
-	Name:          "Twin Flank Guard",
 	tierFourTanks: []TierFourTank{TripleTwinFlank, BattleshipFlank},
 }
 
 // Auto3 Tier Three Tank
 var Auto3 = TierThreeTank{
-	Name:          "Auto 3",
 	tierFourTanks: []TierFourTank{Auto5Auto, AutoGunnerAuto},
 }
 
 // Twin Tier Two Tank
 var Twin = TierTwoTank{
-	Name:           "Twin",
 	tierThreeTanks: []TierThreeTank{TripleShot, QuadTankGuard, TwinFlankTwin},
 }
 
 // Sniper Tier Two Tank
 var Sniper = TierTwoTank{
-	Name:           "Sniper",
 	tierThreeTanks: []TierThreeTank{Assassin, Overseer, Hunter, Trapper},
 }
 
-// MachineGun Tier Two Tank
+// MachineGun Tier Two Tank Spayer only become available if the machine gun chooses no Tier Three Tank
 var MachineGun = TierTwoTank{
-	Name:           "Machine Gun",
-	tierThreeTanks: []TierThreeTank{Destroyer, Gunner, Sprayer},
+	tierThreeTanks:  []TierThreeTank{Destroyer, Gunner},
+	tierFourSpecial: Sprayer,
 }
 
 // FlankGuard Tiew Two Tank
 var FlankGuard = TierTwoTank{
-	Name:           "Flank Gaurd",
 	tierThreeTanks: []TierThreeTank{TriAngle, QuadTankGuard, TwinFlankGuard, Auto3},
 }
 
 // BaseTank Tier one tank or Base Tank
 var BaseTank = TierOneTank{
-	Name:         "Base Tank",
-	TierTwoTanks: []TierTwoTank{Twin, Sniper, MachineGun, FlankGuard},
+	tierTwoTanks:     []TierTwoTank{Twin, Sniper, MachineGun, FlankGuard},
+	tierThreeSpecial: Smasher,
 }
 
 func tankNames() {
 	LandMine.Name = "Land Mine"
 	AutoSmasher.Name = "Auto Smasher"
 	Spike.Name = "Spike"
-
+	Triplet.Name = "Triplet"
+	PentaShot.Name = "Penta Shot"
+	OctoTankQuad.Name = "Octo Tank Quad"
+	Smasher.Name = "Smasher"
+	Auto5.Name = "Auto 5"
+	TripleTwinTwin.Name = "Triple Twin"
+	BattleshipTwin.Name = "Battleship Twin"
+	Ranger.Name = "Ranger"
+	Stalker.Name = "Stalker"
+	Overlord.Name = "Overlord"
+	Necromancer.Name = "Necromancer"
+	Manager.Name = "Manager"
+	OverTrapperSeer.Name = "Overtrapper Seer"
+	BattleshipSniper.Name = "Overtrapper Seer"
+	Factory.Name = "Factory"
+	Predator.Name = "Predator"
+	StreamlinerHunter.Name = "Streamliner Hunter"
+	Hibrid.Name = "Hibrid"
+	Annihilator.Name = "Annihilator"
+	Sprayer.Name = "Spayer"
+	Skimmer.Name = "Skimmer"
+	AutoGunnerGunner.Name = "Auto Gunner Gunner"
+	GunnerTrapperGunner.Name = "Gunner Trapper Gunner"
+	StreamlinerGunner.Name = "Streamliner Gunner"
+	TriTrapper.Name = "Tri-Trapper"
+	GunnerTrapperSniper.Name = "Gunner Trapper Sniper"
+	OverTrapperSniper.Name = "Overtrapper Sniper"
+	MegaTrapper.Name = "Mega Trapper"
+	AutoTrapper.Name = "Auto Trapper"
+	Booster.Name = "Boster"
+	Fighter.Name = "Fighter"
+	OctoTankFlank.Name = "Octo Tank Flank"
+	Auto5Quad.Name = "Auto 5 Quad"
+	TripleTwinFlank.Name = "Triple Twin Flank"
+	BattleshipFlank.Name = "Battleship Flank"
+	Auto5Auto.Name = "Auto 5 Auto"
+	AutoGunnerAuto.Name = "Auto Gunner Auto"
+	TripleShot.Name = "Triple Shot"
+	QuadTankTwin.Name = "Quad Tank Twin"
+	TwinFlankTwin.Name = "Twin Flank Twin"
+	Assassin.Name = "Assassin"
+	Overseer.Name = "Overseer"
+	Hunter.Name = "Hunter"
+	Trapper.Name = "Trapper"
+	Destroyer.Name = "Destroyer"
+	Gunner.Name = "Gunner"
+	TriAngle.Name = "Tri-Angle"
+	QuadTankGuard.Name = "Quad Tank Guard"
+	TwinFlankGuard.Name = "Twin Flank Guard"
+	Auto3.Name = "Auto 3"
+	Twin.Name = "Twin"
+	Sniper.Name = "Sniper"
+	MachineGun.Name = "Machine Gun"
+	FlankGuard.Name = "Flank Gaurd"
+	BaseTank.Name = "Base Tank"
 }
 
 // type searchTank int

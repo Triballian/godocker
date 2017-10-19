@@ -36,12 +36,16 @@ func (t Tank) populate() {
 
 }
 
+func tankNames() {
+	FlankGuard.Name = "FlangGuard"
+}
+
 func main() {
-	FlankGuard.populate()
+	tankNames()
 	// tank := []TierTwoTank{FlankGuard, MachineGun}
 	// populate([]Tank(tank))
 
-	fmt.Println(BaseTank.Name)
+	fmt.Println(FlankGuard.Name)
 	fmt.Println(reflect.TypeOf(FlankGuard))
 
 }
