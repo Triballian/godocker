@@ -4,6 +4,8 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+
+	"github.com/julienschmidt/httprouter"
 )
 
 type dtank struct {
@@ -332,19 +334,30 @@ var BaseTank = TierOneTank{
 	TierTwoTanks: []TierTwoTank{Twin, Sniper, MachineGun, FlankGuard},
 }
 
-type searchTank int
+// type searchTank int
 
-func (s searchTank) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-	err := req.ParseForm()
+// func (s searchTank) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+// 	err := req.ParseForm()
+// 	if err != nil {
+// 		log.Fatalln(err)
+// 	}
+// 	tpl.ExecuteTemplate(w, "index.gohtml", BaseTank)
+
+// 	// fmt.Println("%v", req.Form)
+// 	// io.WriteString(w, "hello from a docker container tanktool")
+
+// 	// if eerr != nil {
+// 	// 	log.Fatalln(eerr)
+// 	// }
+// }
+
+// Index handler
+func Index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	err := r.ParseForm()
 	if err != nil {
 		log.Fatalln(err)
 	}
-	// fmt.Println("%v", req.Form)
-	// io.WriteString(w, "hello from a docker container tanktool")
 	tpl.ExecuteTemplate(w, "index.gohtml", BaseTank)
-	// if eerr != nil {
-	// 	log.Fatalln(eerr)
-	// }
 }
 
 var tpl *template.Template
@@ -354,12 +367,14 @@ func init() {
 }
 
 func main() {
-	var t searchTank
+	// var t searchTank
+	router := httprouter.New()
+	router.GET("/", Index)
 	// build := []string{"Sprayer;", "net_replace_color 2 0x66FF00;", "net_replace_color 1 0xFFFF00;", "game_stats_build 654786547865478874658746547475656"}
 
 	// fmt.Println("%v", baseTank.tierTwoTanks[1].name)
 
 	// http.HandleFunc("/", searchTank)
-	http.ListenAndServe(":8080", t)
+	http.ListenAndServe(":8080", router)
 
 }
