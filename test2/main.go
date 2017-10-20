@@ -1,41 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-// TierTwoTank Tier Two Tank Struct
-type TierTwoTank struct {
-	Tank
-	tierThreeTanks []TierThreeTank
-}
+	"honnef.co/go/js/dom"
+)
 
-// TierOneTank Tier One Tank Struct
-type TierOneTank struct {
-	Tank
-	TierTwoTanks []TierTwoTank
-}
-// Tank base of all tanks
-type Tank struct {
-	Name string
-}
+func main() {
+	// Here I code up the majority of today's blog entry in Go, meta!
+	d := dom.GetWindow().Document()
 
-// MachineGun Tier Two Tank
-var MachineGun = TierTwoTank{
-	Name:           "Machine Gun",
-	tierThreeTanks: []TierThreeTank{Destroyer, Gunner, Sprayer},
-}
+	d.GetElementByID("blog-title").SetInnerHTML("Joseph's Golang Blog")
+	d.GetElementByID("blog-subtitle").SetInnerHTML("Learning the Ways of the Gopher")
 
-// FlankGuard Tiew Two Tank
-var FlankGuard = TierTwoTank{
-	Name:           "Flank Gaurd",
-	tierThreeTanks: []TierThreeTank{TriAngle, QuadTankGuard, TwinFlankGuard, Auto3},
-}
-
-// BaseTank Tier one tank or Base Tank
-var BaseTank = TierOneTank{
-	Name:         "Base Tank",
-	TierTwoTanks: []TierTwoTank{MachineGun, FlankGuard},
-}
-
-func main(){
-	if Basetank
+	d.GetElementByID("post-1-title").SetInnerHTML("Day 1: Setting up GopherJS")
+	d.GetElementByID("post-1-attribution").SetInnerHTML("By Joseph Choi under <a class='post-category post-category-js'>Go</a>")
+	d.GetElementByID("post-1-description-1").SetInnerHTML("Today was my first day with GopherJS. In order to drive myself to learn this new language, I am hoping to make short, Go-related posts on a regular basis. Wish me luck!")
+	fmt.Println(d)
 }

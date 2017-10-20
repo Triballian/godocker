@@ -2,3 +2,14 @@ Golang
 windows 10  Docker
 go get -u github.com/julienschmidt/httprouter
 import "github.com/julienschmidt/httprouter"
+honnef.co/go/js/dom
+
+resources
+html reference
+https://developer.mozilla.org/en-US/docs/web/html/element
+html attributes
+https://developer.mozilla.org/en-US/docs/web/html/attributes
+css selectors
+http://www.w3schools.com/cssref/css_selectors.asp
+css properties
+https://developer.mozilla.org/en-us/docs/web/css/reference
