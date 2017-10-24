@@ -33,4 +33,5 @@ func TestIndexHanlder(t *testing.T) {
 	// if rw.Code != 200 {
 	// 	t.Fatal("Expected status to == 200, but got %d", rw.Code)
 	assert.Equal(rw.Code, 200)
+	assert.Contains(rw.Body.String(), "Tank")
 }

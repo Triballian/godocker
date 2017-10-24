@@ -370,6 +370,7 @@ func tankNames() {
 // 	// 	log.Fatalln(eerr)
 // 	// }
 // }
+// trying out gorilla router
 
 // Index handler
 func Index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
