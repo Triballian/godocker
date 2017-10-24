@@ -387,15 +387,17 @@ func init() {
 }
 
 func main() {
+
 	tankNames()
 	// var t searchTank
 	router := httprouter.New()
 	router.GET("/", Index)
+
 	// build := []string{"Sprayer;", "net_replace_color 2 0x66FF00;", "net_replace_color 1 0xFFFF00;", "game_stats_build 654786547865478874658746547475656"}
 
 	// fmt.Println("%v", baseTank.tierTwoTanks[1].name)
 
 	// http.HandleFunc("/", searchTank)
-	http.ListenAndServe(":8080", router)
+	http.ListenAndServe(":8008", router)
 
 }
