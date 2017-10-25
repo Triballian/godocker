@@ -18,6 +18,6 @@ func main() {
 		js.Global.Call("alert", "Error: "+err.Error())
 	}
 
-	gl.ClearColor(0.48, 0.3, 0.66, 1)
+	gl.ClearColor(0.48, 0.3, 0.66, 1.5)
 	gl.Clear(gl.COLOR_BUFFER_BIT)
 }

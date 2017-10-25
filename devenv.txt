@@ -17,3 +17,4 @@ portlist inlcluding 80,591, 8008, 3000, 4000
 https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
 https://github.com/gopherjs/gopherjs/blob/master/doc/packages.md
 	it only supports http partially
+gopherjs build -w github.com/triballian/godocker/build_image/tanktool/js -o ../public/app.js

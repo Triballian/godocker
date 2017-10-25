@@ -387,6 +387,7 @@ func tankNames() {
 // 	return r
 // }
 func main() {
+
 	// 	m := NewMuX()
 	r := render.New(render.Options{
 		IndentJSON: true,
@@ -399,6 +400,13 @@ func main() {
 	// var t searchTank
 	// router := httprouter.New()
 	// router.GET("/", Index)
+	// http.Handle("/public/", http.FileServer(http.Dir("/public/")))
+	fs := http.FileServer(http.Dir("public"))
+	http.Handle("/public/", http.StripPrefix("/public/", fs))
+	http.HandleFunc("/printTanks", func(res http.ResponseWriter, req *http.Request) {
+		tank := tankFromReq(req)
+		r.HTML(res, 200, "answer", tank)
+	})
 	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
 		// tank := userFormReq(req)
 		r.HTML(res, 200, "index", BaseTank)
@@ -421,7 +429,8 @@ func tankFromReq(req *http.Request) *Tank {
 }
 
 func nameFromReq(req *http.Request) string {
-	name := req.URL.Query().Get("name")
+	name := req.URL.Query().Get("tank")
+
 	return name
 
 }

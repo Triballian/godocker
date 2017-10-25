@@ -3693,7 +3693,7 @@ $packages["github.com/gopherjs/webgl"] = (function() {
 	$pkg.$init = $init;
 	return $pkg;
 })();
-$packages["github.com/Triballian/godocker/build_image/tanktool/js"] = (function() {
+$packages["github.com/triballian/godocker/build_image/tanktool/js"] = (function() {
 	var $pkg = {}, $init, js, webgl, main;
 	js = $packages["github.com/gopherjs/gopherjs/js"];
 	webgl = $packages["github.com/gopherjs/webgl"];
@@ -3714,7 +3714,7 @@ $packages["github.com/Triballian/godocker/build_image/tanktool/js"] = (function(
 			_r = err.Error(); /* */ $s = 3; case 3: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
 			$global.alert($externalize("Error: " + _r, $String));
 		/* } */ case 2:
-		gl.ClearColor(0.47999998927116394, 0.30000001192092896, 0.6600000262260437, 1);
+		gl.ClearColor(0.47999998927116394, 0.30000001192092896, 0.6600000262260437, 1.5);
 		gl.Clear($parseInt(gl.Object.COLOR_BUFFER_BIT) >> 0);
 		$s = -1; return;
 		/* */ } return; } if ($f === undefined) { $f = { $blk: main }; } $f._r = _r; $f._tuple = _tuple; $f.attrs = attrs; $f.canvas = canvas; $f.document = document; $f.err = err; $f.gl = gl; $f.$s = $s; $f.$r = $r; return $f;
@@ -3736,10 +3736,10 @@ $packages["github.com/Triballian/godocker/build_image/tanktool/js"] = (function(
 	return $pkg;
 })();
 $synthesizeMethods();
-var $mainPkg = $packages["github.com/Triballian/godocker/build_image/tanktool/js"];
+var $mainPkg = $packages["github.com/triballian/godocker/build_image/tanktool/js"];
 $packages["runtime"].$init();
 $go($mainPkg.$init, []);
 $flushConsole();
 
 }).call(this);
-//# sourceMappingURL=js.js.map
+//# sourceMappingURL=app.js.map

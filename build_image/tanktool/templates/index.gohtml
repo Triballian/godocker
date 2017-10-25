@@ -6,7 +6,7 @@
 </head>
     <body>
         <p>ok yeah</p>
-        <form action="/printTanks" method="post">
+        <form action="/printTanks" method="get">
             <select name="tank">
             <datalist id="tanks">
                 {{$tank := .}}
@@ -18,9 +18,10 @@
         <!-- keep in mind there is something better than div bit I forgot. -->
         <div>
             blah<br>
-            <script>
+            <!-- <script>
             console.log("this is a js console log.");
-            </script>
+            </script> -->
+            <script type="text/javascript" src="public/app.js">console.log("this is a js console log.");</script>
         </div>    
     </body>
 </html>
