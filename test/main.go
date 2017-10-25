@@ -1,51 +1,37 @@
 package main
 
 import (
-	"fmt"
-	"reflect"
+	"net/http"
+
+	"github.com/unrolled/render"
 )
 
-// TierTwoTank Tier Two Tank Struct
-type TierTwoTank struct {
-	Tank
-}
-
-// TierOneTank Tier One Tank Struct
-type TierOneTank struct {
-	Tank
-}
-
-// Tank base of all tanks
-type Tank struct {
-	Name string
-}
-
-// MachineGun Tier Two Tank
-var MachineGun TierTwoTank
-
-// FlankGuard Tiew Two Tank
-var FlankGuard TierTwoTank
-
-// BaseTank Tier one tank or Base Tank
-var BaseTank = TierOneTank{
-// TierTwoTanks: []TierTwoTank{&MachineGun, &FlankGuard},
-}
-
-func (t Tank) populate() {
-	t.Name = fmt.Sprintf("%v", reflect.TypeOf(t))
-
-}
-
-func tankNames() {
-	FlankGuard.Name = "FlangGuard"
-}
+var sampleString = string("This is a my sample!")
 
 func main() {
-	tankNames()
-	// tank := []TierTwoTank{FlankGuard, MachineGun}
-	// populate([]Tank(tank))
+	r := render.New()
+	mux := http.NewServeMux()
 
-	fmt.Println(FlankGuard.Name)
-	fmt.Println(reflect.TypeOf(FlankGuard))
+	mux.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
+		w.Write([]byte("Welcome, visit page now."))
+	})
+
+	mux.HandleFunc("/data", func(w http.ResponseWriter, req *http.Request) {
+		r.Data(w, http.StatusOK, []byte("Some binary data here."))
+	})
+
+	mux.HandleFunc("/text", func(w http.ResponseWriter, req *http.Request) {
+		r.Text(w, http.StatusOK, "Plain text here")
+
+	})
+
+	mux.HandleFunc("/html", func(w http.ResponseWriter, req *http.Request) {
+		// Assumes you have a template in ./templates called "example.tmpl".
+		// $ mkdir -p templates && echo "<h1>Hello HTML world.</h1>" > templates/example.tmpl
+
+		r.HTML(w, http.StatusOK, "example", sampleString)
+
+	})
+	http.ListenAndServe(":3000", mux)
 
 }

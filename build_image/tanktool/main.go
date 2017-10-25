@@ -1,11 +1,9 @@
 package main
 
 import (
-	"html/template"
-	"log"
 	"net/http"
 
-	"github.com/julienschmidt/httprouter"
+	"github.com/unrolled/render"
 )
 
 type dtank struct {
@@ -373,32 +371,57 @@ func tankNames() {
 // trying out gorilla router
 
 // Index handler
-func Index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	err := r.ParseForm()
-	if err != nil {
-		log.Fatalln(err)
-	}
-	tpl.ExecuteTemplate(w, "index.gohtml", BaseTank)
-}
 
-var tpl *template.Template
+// var tpl *template.Template
 
-func init() {
-	tpl = template.Must(template.ParseFiles("templates/index.gohtml"))
-}
+// func init() {
+// 	tpl = template.Must(template.ParseFiles("templates/index.gohtml"))
 
+// func NewMux() http.Handler {
+// 	r := mux.NewRouter()
+// 	r.HandleFunc("/base/{name}", BaseT)
+// 	r.HandleFunc("/tiertwo/{tname}", TierTwoT)
+// 	r.HandleFunc("/tiertwo/{tname}", TierTwoT)
+// 	r.HandleFunc("/tierthree/ttierthree", TierThreeT)
+// 	r.HandleFunc("/tier/four", TierFourT)
+// 	return r
+// }
 func main() {
+	// 	m := NewMuX()
+	r := render.New(render.Options{
+		IndentJSON: true,
+		// Directory:     "templates",
+		Extensions:    []string{".gohtml"},
+		IsDevelopment: true,
+	})
 
 	tankNames()
 	// var t searchTank
-	router := httprouter.New()
-	router.GET("/", Index)
+	// router := httprouter.New()
+	// router.GET("/", Index)
+	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
+		// tank := userFormReq(req)
+		r.HTML(res, 200, "index", BaseTank)
+	})
 
 	// build := []string{"Sprayer;", "net_replace_color 2 0x66FF00;", "net_replace_color 1 0xFFFF00;", "game_stats_build 654786547865478874658746547475656"}
 
 	// fmt.Println("%v", baseTank.tierTwoTanks[1].name)
 
 	// http.HandleFunc("/", searchTank)
-	http.ListenAndServe(":8008", router)
+	http.ListenAndServe(":3000", nil)
+
+}
+
+func tankFromReq(req *http.Request) *Tank {
+	tank := &Tank{
+		Name: nameFromReq(req),
+	}
+	return tank
+}
+
+func nameFromReq(req *http.Request) string {
+	name := req.URL.Query().Get("name")
+	return name
 
 }
