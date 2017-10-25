@@ -401,8 +401,11 @@ func main() {
 	// router := httprouter.New()
 	// router.GET("/", Index)
 	// http.Handle("/public/", http.FileServer(http.Dir("/public/")))
-	fs := http.FileServer(http.Dir("public"))
-	http.Handle("/public/", http.StripPrefix("/public/", fs))
+	// fs := http.FileServer(http.Dir("public"))
+	// http.Handle("/public/", http.StripPrefix("/public/", fs))
+	http.HandleFunc("/public/app.js", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "/public/app.js")
+	})
 	http.HandleFunc("/printTanks", func(res http.ResponseWriter, req *http.Request) {
 		tank := tankFromReq(req)
 		r.HTML(res, 200, "answer", tank)
