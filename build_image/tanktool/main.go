@@ -386,6 +386,11 @@ func tankNames() {
 // 	r.HandleFunc("/tier/four", TierFourT)
 // 	return r
 // }
+
+func faviconHandler(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "favicon.png")
+}
+
 func main() {
 
 	// 	m := NewMuX()
@@ -401,14 +406,20 @@ func main() {
 	// router := httprouter.New()
 	// router.GET("/", Index)
 	// http.Handle("/public/", http.FileServer(http.Dir("/public/")))
-	// fs := http.FileServer(http.Dir("public"))
-	// http.Handle("/public/", http.StripPrefix("/public/", fs))
-	http.HandleFunc("/public/app.js", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "/public/app.js")
-	})
+	fs := http.FileServer(http.Dir("public"))
+	http.Handle("/public/", http.StripPrefix("/public/", fs))
+	// http.HandleFunc("/favicon.io", func(w http.ResponseWriter, r *http.Request) {
+	// 	http.ServeFile(w, r, "favicon.ico")
+	// })
+	http.HandleFunc("/favicon.png", faviconHandler)
+
+	// for serving specific file
+	// http.HandleFunc("/public/app.js", func(w http.ResponseWriter, r *http.Request) {
+	// 	http.ServeFile(w, r, "/public/app.js")
+	// })
 	http.HandleFunc("/printTanks", func(res http.ResponseWriter, req *http.Request) {
 		tank := tankFromReq(req)
-		r.HTML(res, 200, "answer", tank)
+		r.HTML(res, 200, "tank", tank)
 	})
 	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
 		// tank := userFormReq(req)
